@@ -1,3 +1,8 @@
+div{
+    text-align: center;
+    justify-content: center;
+}
+
 /*  Out images are of size 100px, that's why we are makin a 3/4 box */
 .grid{
     display: flex;
