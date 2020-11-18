@@ -1,5 +1,7 @@
+// All the code for this game is done in this DOM eventListner.
 document.addEventListener('DOMContentLoaded', () => {
     //card options
+    // Making the array of cards and giving them names to use them later.
     const cardArray = [
       {
         name: 'fries',
@@ -74,8 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
         var card = document.createElement('img')
         card.setAttribute('src', 'images/blank.png')
         card.setAttribute('data-id', i)
+        // If the cards are clicked then this will invoke a flip function.
         card.addEventListener('click', flipCard)
         grid.appendChild(card)
+
+        // Everything here will go in div with class grid with the help of appendChild property
       }
     }
   
@@ -121,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
       var cardId = this.getAttribute('data-id')
       cardsChosen.push(cardArray[cardId].name)
       cardsChosenId.push(cardId)
+
+      // This setAttribute will help us to add image to the respective card id
       this.setAttribute('src', cardArray[cardId].img)
       if (cardsChosen.length ===2) {
         setTimeout(checkForMatch, 500)
